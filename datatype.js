@@ -1,0 +1,11 @@
+let username="nirjala";
+console.log(username);
+let userage=20;
+console.log(userage);
+let ispass=true;
+console.log(ispass);
+let nothing=null;
+console.log(nothing);
+const user={name:"nirjala", age:20};
+user.name="sita";
+console.log(user);

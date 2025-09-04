@@ -28,3 +28,9 @@ for(let val of arr2){
     sum+=val;
 }
 console.log("sum of array is:",sum);
+
+//arrow function
+let a=(b,c)=>{
+    return b+c;
+}
+ console.log(a(9,10));

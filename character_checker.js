@@ -1,5 +1,5 @@
 //check is the given character is alphabet, digit or character
-let char='*';
+let char='19';
 if((char>='a' && char<='z') || (char>='A' && char<='Z')){
     console.log(char,"is an alphabet");
 }else if(char>='0' && char<='9'){

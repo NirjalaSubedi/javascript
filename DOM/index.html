@@ -8,12 +8,27 @@
 <body>
     <p id="demo"></p>
     <button id="btn">Click Me</button>
+    <button id="btn1"> Hello</button>
     <script>
     document.getElementById("demo").innerHTML="Hello World"
     const btn=document.getElementById("btn");
+     btn.addEventListener('click',function(){
+        alert("hello you clicked button1")
+    })
     btn.addEventListener("click",function(){
         btn.style.backgroundColor="red";
+    });
+
+    const btn1=document.getElementById('btn1');
+    btn1.addEventListener('click',function(){
+        btn1.style.backgroundColor="yellow";
+        btn1.style.border="none";
     })
+
+    btn.addEventListener('click',function(){
+        alert("hello you clicked button1")
+    })
+
     </script>
 </body>
 </html>

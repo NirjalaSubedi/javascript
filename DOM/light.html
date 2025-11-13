@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="bulbof.jpeg" id="bulbon">
+    <br>
+    <button id="btnclick">Turn On</button>
+    <script>
+    const bulb=document.getElementById("bulbon");
+    const click=document.getElementById("click");
+    btnclick.addEventListener('click',function(){
+       if(bulb.src.match("bulbof")){
+        bulb.src="bulbon.jpeg";
+        btnclick.innerHTML="Turn Off";
+       }
+       else{
+        bulb.src="bulbof.jpeg";
+        btnclick.innerHTML="Turn On";
+       }
+    })
+    </script>
+
+</body>
+</html>

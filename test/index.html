@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Language Toggle - Page 1</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1 id="welcomeText"></h1>
+
+  <button onclick="setLanguage('nepali')">नेपाली</button>
+  <button onclick="setLanguage('english')">English</button>
+
+  <br><br>
+  <a href="details.html">➡ दोस्रो पेजमा जानुहोस्</a>
+
+  <script>
+    // भाषा सेट गर्ने
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      updateText(lang);
+    }
+
+    // पेज लोड हुँदा भाषा अनुसार टेक्स्ट देखाउने
+    function updateText(lang) {
+      if (lang === 'nepali') {
+        document.getElementById('welcomeText').innerText = 'स्वागत छ! यो पहिलो पेज हो।';
+      } else {
+        document.getElementById('welcomeText').innerText = 'Welcome! This is the first page.';
+      }
+    }
+
+    // default भाषा लोड गर्ने
+    const lang = localStorage.getItem('lang') || 'nepali';
+    updateText(lang);
+  </script>
+</body>
+</html>

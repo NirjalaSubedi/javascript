@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Username Validation</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input, button { margin-top: 10px; }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>Username Form</h2>
+  <form id="userForm">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br>
+    <button type="submit">Submit</button>
+    <p id="message"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById('userForm');
+    const usernameInput = document.getElementById('username');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // prevent actual form submission
+
+      const username = usernameInput.value.trim();
+      const regex = /^([a-zA-Z0-9.]{5,10})$/;
+
+      if (regex.test(username)) {
+        message.textContent = "✅ Valid username!";
+        message.className = "success";
+      } else {
+        message.textContent = "❌ Invalid username. Use 5–10 letters, numbers, or dots.";
+        message.className = "error";
+      }
+    });
+  </script>
+
+</body>
+</html>

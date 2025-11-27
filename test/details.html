@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Language Toggle - Page 2</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin-right: 10px; }
+  </style>
+</head>
+<body>
+  <h1 id="detailsTitle"></h1>
+  <p id="detailsText"></p>
+
+  <button onclick="setLanguage('nepali')">नेपाली</button>
+  <button onclick="setLanguage('english')">English</button>
+
+  <br><br>
+  <a href="index.html">⬅ पहिलो पेजमा फर्कनुहोस्</a>
+
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      updateText(lang);
+    }
+
+    function updateText(lang) {
+      if (lang === 'nepali') {
+        document.getElementById('detailsTitle').innerText = 'विवरण पेज';
+        document.getElementById('detailsText').innerText = 'यो दोस्रो पेज हो जुन नेपालीमा देखिएको छ।';
+      } else {
+        document.getElementById('detailsTitle').innerText = 'Details Page';
+        document.getElementById('detailsText').innerText = 'This is the second page shown in English.';
+      }
+    }
+
+    const lang = localStorage.getItem('lang') || 'nepali';
+    updateText(lang);
+  </script>
+</body>
+</html>

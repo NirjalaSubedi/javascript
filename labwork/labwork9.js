@@ -3,6 +3,6 @@
 
 const strArray=["nirjala","samikshya","rukshan","ishan","bipin"];
 const usingmap=strArray.map((value)=>{
-    return(value.toLocaleUpperCase())
+    return(value.toUpperCase())
 })
 console.log(usingmap)

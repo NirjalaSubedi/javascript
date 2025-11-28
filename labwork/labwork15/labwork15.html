@@ -1,0 +1,55 @@
+<!--designing client side validation systems for a registration form
+1.Verify that the email address provided adheres to correct the format.
+2.Validate the age input to accept only numeric values between 1 and 120.
+3. Ensure that the password and confirm password fields match.
+4.Validate the zip code input to match a specific format (eg,12345 or 12345-6789).
+5.Confirm that the checkbox agreeing  to terms and conditions is checked.
+6. Validate the URL input to ensure it follows a valid format.
+7.Check that the entered date is not set in the future.
+8.REstrict the uploaded file size to a specified limit.
+9.Confirm that a country is selected from a dropdown menu.
+10.Implemented password strength validation requiring at least 8 characters including a mix of upper 
+case ,lowercase,numeric,and special characters.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form id="registerform">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <label for="ZipCode">ZipCode</label>
+        <input type="text" id="ZipCode" name="ZipCode">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">Agree to terms and conditions</label>
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+        <label for="fileUpload">Upload File:</label>
+        <input type="file" id="fileupload" name="fileUpload">
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="nepal">Nepal</option>
+            <option value="india">india</option>
+            <option value="china">china</option>
+        </select>
+        <button type="submit" id="register">Register</button>
+    </form>
+    <script src="labwork15.js"></script>
+        
+</body>
+</html>

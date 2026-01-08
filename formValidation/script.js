@@ -17,7 +17,7 @@ form.addEventListener('submit',function(e){
     result[0].textContent="Valid Username";
     result[0].style.color="green";
     usernameinput.style.borderColor="green";
-    usernameinput.style.color="green";
+    usernameinput.style.color="yellow";
    }else{
     result[0].textContent="Invalid Username";
     result[0].style.color="red";

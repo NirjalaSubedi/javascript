@@ -3,29 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>just practice</title>
+    <title>Image Spin Practice</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 20px;
+            background-color: #f0f0f0;
+        }
+
         .image {
             width: 300px;
             height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius:50%;
+            border-radius: 50%;
+            overflow: hidden; /* Image gollo dekhios vanera */
+            border: 5px solid #333;
         }
+
         .image img {
             max-width: 100%;
             max-height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- CSS for Spinning --- */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spin-now {
+            animation: spin 2s linear infinite;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
+
     <div class="image">
-        <img src="image.png" alt="iamge">
-        <button>span</button>
+        <img src="image.png" alt="image" id="targetImage">
     </div>
+
+    <button id="spinBtn">Spin Image</button>
+
     <script>
-        
+        const btn = document.getElementById('spinBtn');
+        const img = document.getElementById('targetImage');
+
+        btn.addEventListener('click', () => {
+            // "spin-now" class thapne/hataune kaam garcha
+            img.classList.toggle('spin-now');
+
+            // Button ko text change garna (Optional)
+            if (img.classList.contains('spin-now')) {
+                btn.innerText = "Stop Spinning";
+            } else {
+                btn.innerText = "Spin Image";
+            }
+        });
     </script>
 </body>
 </html>

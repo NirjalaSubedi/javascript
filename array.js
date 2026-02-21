@@ -1,5 +1,5 @@
-// let arr=["book","pen","pencil"];
-// console.log(typeof(arr));
+let arr=["book","pen","pencil"];
+console.log(typeof(arr));
 // arr[3]="eraser";
 // console.log(arr);
 // console.log(arr.length);
@@ -8,7 +8,7 @@
 // console.log(arr);
 // arr[0]="notebook";
 // console.log(arr.toString());
-// arr.pop();
+arr.pop();
 // console.log(arr);
 // arr.shift();
 // console.log(arr);

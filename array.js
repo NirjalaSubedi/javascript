@@ -1,9 +1,9 @@
 let arr=["book","pen","pencil"];
 console.log(typeof(arr));
-// arr[3]="eraser";
-// console.log(arr);
-// console.log(arr.length);
-// console.log(arr.length-1);
+ arr[3]="eraser";
+ console.log(arr);
+console.log(arr.length);
+ console.log(arr.length-1);
 // arr.push("sharpener");
 // console.log(arr);
 // arr[0]="notebook";

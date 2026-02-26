@@ -3,52 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Interactive Quiz</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; padding: 40px; display: flex; justify-content: center; }
+        .container { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
+        h1 { font-size: 24px; margin-bottom: 20px; color: #333; }
+        ul { list-style: none; padding: 0; }
+        li { 
+            margin: 12px 0; 
+            padding: 15px; 
+            background-color: #f8f9fa; 
+            border: 2px solid #e9ecef;
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-            padding: 15px;
-            background-color: #e2e2e2;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s; /* Smooth color change ko lagi */
-        }
-        
-        /* Right vaye pachi green hune */
-        .right-ans {
-            background-color: #4CAF50 !important;
-            color: white;
-        }
+        li:hover { background-color: #e9ecef; }
 
-        /* Wrong vaye pachi red hune */
-        .wrong-ans {
-            background-color: #f44336 !important;
-            color: white;
-        }
+        .right-ans { background-color: #d4edda !important; border-color: #28a745 !important; color: #155724; }
+        .wrong-ans { background-color: #f8d7da !important; border-color: #dc3545 !important; color: #721c24; }
+        
+        .disabled { pointer-events: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Quiz</h1>
-        <p>What is the capital of Nepal?</p>
-        <ul>
+        <p><strong>Q: What is the capital of Nepal?</strong></p>
+        <ul id="quiz-options">
             <li class="option">A. Pokhara</li>
             <li class="option" id="correct">B. Kathmandu</li>
             <li class="option">C. Biratnagar</li>
@@ -58,20 +42,20 @@
 
     <script>
         const options = document.querySelectorAll('.option');
+        const correctOption = document.getElementById('correct');
 
         options.forEach(option => {
             option.addEventListener('click', () => {
-                // Paila ko color haru hatauna (reset garna)
-                options.forEach(opt => {
-                    opt.classList.remove('right-ans', 'wrong-ans');
-                });
-
-                // Check garne: id "correct" vako right ho, aru wrong
+                
                 if (option.id === 'correct') {
                     option.classList.add('right-ans');
                 } else {
                     option.classList.add('wrong-ans');
+                    correctOption.classList.add('right-ans');
                 }
+
+
+                options.forEach(opt => opt.classList.add('disabled'));
             });
         });
     </script>

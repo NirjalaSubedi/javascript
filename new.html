@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz</title>
+    <title>Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
             padding: 20px;
         }
         .container {
             background-color: #fff;
             padding: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
+            max-width: 400px;
         }
         ul {
             list-style-type: none;
@@ -26,35 +23,58 @@
         }
         li {
             margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             background-color: #e2e2e2;
-            border-radius: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s; /* Smooth color change ko lagi */
         }
-        </style>
+        
+        /* Right vaye pachi green hune */
+        .right-ans {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+
+        /* Wrong vaye pachi red hune */
+        .wrong-ans {
+            background-color: #f44336 !important;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
         <h1>Quiz</h1>
         <p>What is the capital of Nepal?</p>
         <ul>
-            <li data-correct="false">A. pokhara</li>
-            <li data-correct="true">B. kathmandu</li>
-            <li data-correct="false">C. Birathnagar</li>
-            <li data-correct="false">D. Baglung</li>
+            <li class="option">A. Pokhara</li>
+            <li class="option" id="correct">B. Kathmandu</li>
+            <li class="option">C. Biratnagar</li>
+            <li class="option">D. Baglung</li>
         </ul>
     </div>
+
     <script>
-        
-        const options = document.querySelectorAll('li');
+        const options = document.querySelectorAll('.option');
+
         options.forEach(option => {
             option.addEventListener('click', () => {
-                if (option.textContent.includes('B. kathmandu')) {
-                    alert('Correct! Kathmandu is the capital of Nepal.');
+                // Paila ko color haru hatauna (reset garna)
+                options.forEach(opt => {
+                    opt.classList.remove('right-ans', 'wrong-ans');
+                });
+
+                // Check garne: id "correct" vako right ho, aru wrong
+                if (option.id === 'correct') {
+                    option.classList.add('right-ans');
                 } else {
-                    alert('Wrong! Try again.');
+                    option.classList.add('wrong-ans');
                 }
             });
         });
     </script>
+
 </body>
 </html>

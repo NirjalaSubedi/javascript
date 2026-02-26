@@ -37,11 +37,24 @@
         <h1>Quiz</h1>
         <p>What is the capital of Nepal?</p>
         <ul>
-            <li>A. pokhara</li>
-            <li>B. kathmandu</li>
-            <li>C. Birathnagar</li>
-            <li>D. Baglung</li>
+            <li data-correct="false">A. pokhara</li>
+            <li data-correct="true">B. kathmandu</li>
+            <li data-correct="false">C. Birathnagar</li>
+            <li data-correct="false">D. Baglung</li>
         </ul>
     </div>
+    <script>
+        
+        const options = document.querySelectorAll('li');
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                if (option.textContent.includes('B. kathmandu')) {
+                    alert('Correct! Kathmandu is the capital of Nepal.');
+                } else {
+                    alert('Wrong! Try again.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
